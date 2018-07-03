@@ -8,4 +8,9 @@ public class PlayerStatus : MonoBehaviour
     public int hp = 100;
     public int mp = 100;
     public int coin = 200;
+
+    public void GetCoin(int count)
+    {
+        coin += count;
+    }
 }

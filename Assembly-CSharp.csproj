@@ -189,7 +189,11 @@
      <Compile Include="Assets\RPG\Effect\Effects_01\Prefebs\DestroyForTime.cs" />
      <Compile Include="Assets\RPG\Effect\Effects_02\ScrollUV.cs" />
      <Compile Include="Assets\Scripts\CharacterCreation\CharacterCreation.cs" />
+     <Compile Include="Assets\Scripts\Custom\CursorManager.cs" />
+     <Compile Include="Assets\Scripts\Custom\ObjectsInfo.cs" />
      <Compile Include="Assets\Scripts\Custom\Tags.cs" />
+     <Compile Include="Assets\Scripts\NPC\BarNPC.cs" />
+     <Compile Include="Assets\Scripts\NPC\NPC.cs" />
      <Compile Include="Assets\Scripts\Player\FollowPlayer.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerAnimation.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerDir.cs" />
@@ -198,6 +202,9 @@
      <Compile Include="Assets\Scripts\Start\ButtonContainer.cs" />
      <Compile Include="Assets\Scripts\Start\MovieCamera.cs" />
      <Compile Include="Assets\Scripts\Start\PressAnyKey.cs" />
+     <Compile Include="Assets\Scripts\UI\FunctionBar.cs" />
+     <Compile Include="Assets\Scripts\UI\Inventory.cs" />
+     <Compile Include="Assets\Scripts\UI\InventoryItemGrid.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.8.2.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
@@ -232,6 +239,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\OjbectsInfoList.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
