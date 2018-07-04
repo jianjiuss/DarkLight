@@ -10,16 +10,19 @@ public class ObjectsInfo : MonoBehaviour
 
     public TextAsset objectsInfoListText;
 
-    void Awake() {
+    void Awake() 
+    {
         _Instance = this;
         ReadInfo();
     }
 
-    void ReadInfo() {
+    void ReadInfo() 
+    {
         string text = objectsInfoListText.text;
         string[] strArray = text.Split('\n');
 
-        foreach (string str in strArray) {
+        foreach (string str in strArray) 
+        {
             string[] proArray = str.Split(',');
             ObjectInfo info = new ObjectInfo();
 
@@ -28,7 +31,8 @@ public class ObjectsInfo : MonoBehaviour
             string icon_name = proArray[2];
             string str_type = proArray[3];
             ObjectType type = ObjectType.None;
-            switch (str_type) {
+            switch (str_type) 
+            {
                 case "Drug":
                     type = ObjectType.Drug;
                     break;
@@ -41,7 +45,8 @@ public class ObjectsInfo : MonoBehaviour
             }
             info.id = id; info.name = name; info.icon_name = icon_name;
             info.type = type;
-            if (type == ObjectType.Drug) {
+            if (type == ObjectType.Drug) 
+            {
                 int hp = int.Parse(proArray[4]);
                 int mp = int.Parse(proArray[5]);
                 int price_sell = int.Parse(proArray[6]);
@@ -54,6 +59,15 @@ public class ObjectsInfo : MonoBehaviour
         }
     }
 
+    public ObjectInfo GetObjectInfo(int id)
+    {
+        ObjectInfo objectInfo = null;
+        if (objectInfoDict.TryGetValue(id, out objectInfo))
+        {
+            return objectInfo;
+        }
+        return null;
+    }
 }
 
 

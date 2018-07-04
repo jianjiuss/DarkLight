@@ -204,6 +204,7 @@
      <Compile Include="Assets\Scripts\Start\PressAnyKey.cs" />
      <Compile Include="Assets\Scripts\UI\FunctionBar.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory.cs" />
+     <Compile Include="Assets\Scripts\UI\InventoryItem.cs" />
      <Compile Include="Assets\Scripts\UI\InventoryItemGrid.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.8.2.txt" />

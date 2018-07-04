@@ -8,7 +8,16 @@ public class FunctionBar : MonoBehaviour
     {}
 
     public void OnBagButtonClick()
-    {}
+    {
+        if (Inventory._Instance.isInventoryShow)
+        {
+            Inventory._Instance.Hide();
+        }
+        else
+        {
+            Inventory._Instance.Show();
+        }
+    }
 
     public void OnEquipButtonClick()
     {}
