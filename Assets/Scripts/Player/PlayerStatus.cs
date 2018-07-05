@@ -23,4 +23,17 @@ public class PlayerStatus : MonoBehaviour
         coin += count;
         Inventory._Instance.AddCoinCount(count);
     }
+
+    public bool GetPoint(int point = 1)
+    { 
+        if(poin_remain >= point)
+        {
+            poin_remain -= point;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

@@ -72,6 +72,13 @@ public class ObjectsInfo : MonoBehaviour
 
 
 
+public enum ObjectType {
+    Drug,
+    Equip,
+    Mat,
+    None
+}
+
 //id
 //名称
 //icon名称
@@ -80,13 +87,6 @@ public class ObjectsInfo : MonoBehaviour
 //加魔法值
 //出售价
 //购买
-public enum ObjectType {
-    Drug,
-    Equip,
-    Mat,
-    None
-}
-
 public class ObjectInfo {
     public int id;
     public string name;

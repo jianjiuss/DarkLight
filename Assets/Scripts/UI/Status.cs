@@ -68,6 +68,36 @@ public class Status : MonoBehaviour
         }
     }
 
+    public void OnAddAttackButtonClick()
+    {
+        bool havePoint = playerStatus.GetPoint();
+        if(havePoint)
+        {
+            playerStatus.attack_plus++;
+        }
+        UpdateShow();
+    }
+
+    public void OnAddDefendButtonClick()
+    {
+        bool havePoint = playerStatus.GetPoint();
+        if(havePoint)
+        {
+            playerStatus.def_plus++;
+        }
+        UpdateShow();
+    }
+
+    public void OnAddSpeedButtonClick()
+    {
+        bool havePoint = playerStatus.GetPoint();
+        if (havePoint)
+        {
+            playerStatus.speed_plus++;
+        }
+        UpdateShow();
+    }
+
     public void SwitchStatus()
     {
         if (isShow)
@@ -82,7 +112,8 @@ public class Status : MonoBehaviour
                 gameObject.SetActive(true);
             }
             isShow = true;
-            tweenPosition.Play();
+            tweenPosition.PlayForward();
+            UpdateShow();
         }
     }
 }
