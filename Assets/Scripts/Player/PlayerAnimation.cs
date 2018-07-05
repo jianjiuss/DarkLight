@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour 
 {
     private PlayerMove playerMove;
-    private Animation animation;
+    private new Animation animation;
 
     void Start()
     {

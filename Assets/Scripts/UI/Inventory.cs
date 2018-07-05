@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
     public static Inventory _Instance;
 
     private TweenPosition tween;
-    private int coinCount = 1000;
+    private int coinCount = 200;
 
     public List<InventoryItemGrid> itemGridList = new List<InventoryItemGrid>();
     public UILabel coinNumberLabel;
@@ -18,6 +18,7 @@ public class Inventory : MonoBehaviour
     {
         _Instance = this;
         tween = this.GetComponent<TweenPosition>();
+        coinNumberLabel.text = coinCount.ToString();
     }
 
     void Update()
@@ -26,6 +27,12 @@ public class Inventory : MonoBehaviour
         {
             GetItem(Random.Range(1001, 1004));
         }
+    }
+
+    public void AddCoinCount(int count)
+    {
+        coinCount += count;
+        coinNumberLabel.text = coinCount.ToString();
     }
 
     public void GetItem(int id)

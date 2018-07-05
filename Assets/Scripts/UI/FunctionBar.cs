@@ -5,7 +5,9 @@ using UnityEngine;
 public class FunctionBar : MonoBehaviour 
 {
     public void OnStatusButtonClick()
-    {}
+    {
+        Status._Instance.SwitchStatus();
+    }
 
     public void OnBagButtonClick()
     {

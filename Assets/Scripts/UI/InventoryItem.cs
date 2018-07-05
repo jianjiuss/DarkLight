@@ -5,6 +5,8 @@ using UnityEngine;
 public class InventoryItem : UIDragDropItem 
 {
     private UISprite sprite;
+    private bool isHover = false;
+    private int itemId;
 
     void Awake()
     {
@@ -14,7 +16,31 @@ public class InventoryItem : UIDragDropItem
     protected override void Start()
     {
         base.Start();
-        sprite.depth = 4;
+        sprite.depth = 5;
+    }
+
+    bool isShowDes = false;
+    protected override void Update()
+    {
+        base.Update();
+        if (isHover && !isShowDes)
+        {
+            isShowDes = true;
+            ItemDes._Instance.Show(itemId);
+        }
+
+        if (!isHover && isShowDes)
+        {
+            isShowDes = false;
+            ItemDes._Instance.Hide();
+        }
+            
+    }
+
+    protected override void OnDragStart()
+    {
+        base.OnDragStart();
+        isHover = false;
     }
 
     protected override void OnDragDropRelease(GameObject surface)
@@ -37,19 +63,19 @@ public class InventoryItem : UIDragDropItem
             else if(surface.tag == Tags.inventory_item)
             {
                 InventoryItemGrid oldItemGrid = gameObject.transform.parent.GetComponent<InventoryItemGrid>();
-                InventoryItemGrid newItemGrid = surface.GetComponent<InventoryItemGrid>();
+                InventoryItemGrid newItemGrid = surface.transform.parent.GetComponent<InventoryItemGrid>();
 
                 int tempId = newItemGrid.id;
                 int tempNum = newItemGrid.num;
                 
                 newItemGrid.ClearInfo();
+                this.transform.parent = newItemGrid.gameObject.transform;
                 newItemGrid.SetId(oldItemGrid.id, oldItemGrid.num);
-                this.transform.parent = surface.transform;
                 
                 oldItemGrid.ClearInfo();
-                oldItemGrid.SetId(tempId, tempNum);
                 InventoryItem newItem = newItemGrid.GetComponentInChildren<InventoryItem>();
                 newItem.gameObject.transform.parent = oldItemGrid.gameObject.transform;
+                oldItemGrid.SetId(tempId, tempNum);
                 newItem.ResetPosition();
             }
         }
@@ -67,9 +93,20 @@ public class InventoryItem : UIDragDropItem
         sprite.name = info.icon_name;
     }
 
-    public void SetIconName(string iconName)
+    public void SetIconName(int id,string iconName)
     {
         sprite.name = iconName;
         sprite.spriteName = iconName;
+        itemId = id;
+    }
+
+    public void OnHoverOver()
+    {
+        isHover = true;
+    }
+
+    public void OnHoverOut()
+    {
+        isHover = false;
     }
 }
