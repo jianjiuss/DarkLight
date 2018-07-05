@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkLight", "DarkLight.csproj", "{692F24D0-DFE8-32DC-1E7C-A5C5D5C4AD5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkLight.Plugins", "DarkLight.Plugins.csproj", "{C950A510-1CA3-AFA9-9D8D-7F2ED5647CFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkLight.Editor", "DarkLight.Editor.csproj", "{B8C67C09-84D4-A851-74B4-EE549CD407A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{692F24D0-DFE8-32DC-1E7C-A5C5D5C4AD5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{692F24D0-DFE8-32DC-1E7C-A5C5D5C4AD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{692F24D0-DFE8-32DC-1E7C-A5C5D5C4AD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{692F24D0-DFE8-32DC-1E7C-A5C5D5C4AD5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C950A510-1CA3-AFA9-9D8D-7F2ED5647CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C950A510-1CA3-AFA9-9D8D-7F2ED5647CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C950A510-1CA3-AFA9-9D8D-7F2ED5647CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C950A510-1CA3-AFA9-9D8D-7F2ED5647CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C67C09-84D4-A851-74B4-EE549CD407A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C67C09-84D4-A851-74B4-EE549CD407A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C67C09-84D4-A851-74B4-EE549CD407A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C67C09-84D4-A851-74B4-EE549CD407A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

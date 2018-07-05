@@ -7,18 +7,20 @@ public class Inventory : MonoBehaviour
     public static Inventory _Instance;
 
     private TweenPosition tween;
-    private int coinCount = 200;
 
     public List<InventoryItemGrid> itemGridList = new List<InventoryItemGrid>();
     public UILabel coinNumberLabel;
     public GameObject inventoryItem;
     public bool isInventoryShow = false;
 
+    private PlayerStatus playerStatus;
+
     void Awake()
     {
         _Instance = this;
         tween = this.GetComponent<TweenPosition>();
-        coinNumberLabel.text = coinCount.ToString();
+        playerStatus = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<PlayerStatus>();
+        UpdateCoinLabel();
     }
 
     void Update()
@@ -29,13 +31,12 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddCoinCount(int count)
+    public void UpdateCoinLabel()
     {
-        coinCount += count;
-        coinNumberLabel.text = coinCount.ToString();
+        coinNumberLabel.text = playerStatus.coin.ToString();
     }
 
-    public void GetItem(int id)
+    public void GetItem(int id, int numb = 1)
     {
         bool isExist = false;
         foreach (var item in itemGridList)
@@ -43,7 +44,7 @@ public class Inventory : MonoBehaviour
             if (item.id == id)
             {
                 isExist = true;
-                item.PlusNum();
+                item.PlusNum(numb);
             }
         }
 
@@ -58,7 +59,7 @@ public class Inventory : MonoBehaviour
             {
                 GameObject itemObject = NGUITools.AddChild(item.gameObject, inventoryItem);
                 itemObject.transform.localPosition = Vector3.zero;
-                item.SetId(id);
+                item.SetId(id,numb);
                 return;
             }
         }
