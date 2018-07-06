@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ public class PlayerStatus : MonoBehaviour
     public void GetCoin(int count)
     {
         coin += count;
-        Inventory._Instance.AddCoinCount(count);
+        Inventory._Instance.UpdateCoinLabel();
     }
 
     public bool GetPoint(int point = 1)
@@ -35,5 +36,17 @@ public class PlayerStatus : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public bool GetMoney(int spendMoney)
+    {
+        if(spendMoney > coin)
+        {
+            return false;
+        }
+
+        coin -= spendMoney;
+        Inventory._Instance.UpdateCoinLabel();
+        return true;
     }
 }
