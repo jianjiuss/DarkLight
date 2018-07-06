@@ -3,8 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum HeroType
+{
+    Swordman,
+    Magician,
+    Common
+}
+
 public class PlayerStatus : MonoBehaviour 
 {
+    public HeroType heroType;
+
     public int grade = 1;
     public int hp = 100;
     public int mp = 100;

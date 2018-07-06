@@ -39,7 +39,7 @@ public class DrugShop : MonoBehaviour
     {
         confirmField.SetActive(true);
         currentBuyId = 1003;
-    }
+    } 
 
     public void OnOkButtonClick()
     {
@@ -55,7 +55,7 @@ public class DrugShop : MonoBehaviour
             return;
         }
         Inventory._Instance.GetItem(buyInfo.id, buyNumb);
-        buyNumb = 0;
+        SetBuyNumb(0);
         confirmField.SetActive(false);
     }
 
@@ -66,11 +66,18 @@ public class DrugShop : MonoBehaviour
             isShow = false;
             tweenPosition.PlayReverse();
             confirmField.SetActive(false);
+            SetBuyNumb(0);
         }
         else
         {
             isShow = true;
             tweenPosition.PlayForward();
         }
+    }
+
+    private void SetBuyNumb(int numb)
+    {
+        buyNumbLabel.text = "0";
+        buyNumbLabel.GetComponent<UIInput>().value = "0";
     }
 }

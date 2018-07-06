@@ -204,6 +204,8 @@
      <Compile Include="Assets\Scripts\Start\MovieCamera.cs" />
      <Compile Include="Assets\Scripts\Start\PressAnyKey.cs" />
      <Compile Include="Assets\Scripts\UI\DrugShop.cs" />
+     <Compile Include="Assets\Scripts\UI\Equipment.cs" />
+     <Compile Include="Assets\Scripts\UI\EquipmentItem.cs" />
      <Compile Include="Assets\Scripts\UI\FunctionBar.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory.cs" />
      <Compile Include="Assets\Scripts\UI\InventoryItem.cs" />

@@ -1,2 +1,74 @@
 Base path: C:/Program Files/Unity/Editor/Data
 Cmd: initializeCompiler
+Cmd: preprocess
+  insize=219 outsize=219 ok=1
+Cmd: preprocess
+  insize=2400 outsize=901 ok=1
+Cmd: preprocess
+  insize=1654 outsize=544 ok=1
+Cmd: preprocess
+  insize=2969 outsize=941 ok=1
+Cmd: preprocess
+  insize=2413 outsize=532 ok=1
+Cmd: preprocess
+  insize=2069 outsize=938 ok=1
+Cmd: preprocess
+  insize=2047 outsize=529 ok=1
+Cmd: preprocess
+  insize=480 outsize=480 ok=1
+Cmd: preprocess
+  insize=2533 outsize=587 ok=1
+Cmd: preprocess
+  insize=2166 outsize=585 ok=1
+Cmd: preprocess
+  insize=1487 outsize=661 ok=1
+Cmd: preprocess
+  insize=1535 outsize=882 ok=1
+Cmd: preprocess
+  insize=1586 outsize=678 ok=1
+Cmd: preprocess
+  insize=2767 outsize=903 ok=1
+Cmd: preprocess
+  insize=1719 outsize=930 ok=1
+Cmd: preprocess
+  insize=1643 outsize=585 ok=1
+Cmd: preprocess
+  insize=1659 outsize=1025 ok=1
+Cmd: preprocess
+  insize=3167 outsize=1820 ok=1
+Cmd: preprocess
+  insize=1511 outsize=530 ok=1
+Cmd: preprocess
+  insize=3042 outsize=1917 ok=1
+Cmd: preprocess
+  insize=2602 outsize=939 ok=1
+Cmd: preprocess
+  insize=1867 outsize=900 ok=1
+Cmd: preprocess
+  insize=2557 outsize=546 ok=1
+Cmd: preprocess
+  insize=435 outsize=435 ok=1
+Cmd: preprocess
+  insize=1583 outsize=719 ok=1
+Cmd: preprocess
+  insize=1548 outsize=559 ok=1
+Cmd: preprocess
+  insize=1497 outsize=892 ok=1
+Cmd: preprocess
+  insize=6033 outsize=3625 ok=1
+Cmd: preprocess
+  insize=1547 outsize=935 ok=1
+Cmd: preprocess
+  insize=2361 outsize=2422 ok=1
+Cmd: preprocess
+  insize=1370 outsize=542 ok=1
+Cmd: preprocess
+  insize=1315 outsize=535 ok=1
+Cmd: preprocess
+  insize=2190 outsize=544 ok=1
+Cmd: preprocess
+  insize=1751 outsize=981 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=7217 outsize=2022 kw=DIRECTIONAL pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=7217 outsize=2618 kw=DIRECTIONAL pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME ok=1

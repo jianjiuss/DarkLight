@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            GetItem(Random.Range(1001, 1004));
+            GetItem(Random.Range(2001, 2022));
         }
     }
 

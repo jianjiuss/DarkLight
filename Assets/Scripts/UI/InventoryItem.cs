@@ -5,8 +5,8 @@ using UnityEngine;
 public class InventoryItem : UIDragDropItem 
 {
     private UISprite sprite;
-    private bool isHover = false;
     private int itemId;
+    private bool isHover = false;
 
     void Awake()
     {
@@ -19,28 +19,19 @@ public class InventoryItem : UIDragDropItem
         sprite.depth = 5;
     }
 
-    bool isShowDes = false;
     protected override void Update()
     {
         base.Update();
-        if (isHover && !isShowDes)
+        if(isHover && Input.GetMouseButtonDown(1))
         {
-            isShowDes = true;
-            ItemDes._Instance.Show(itemId);
+            Equipment._Instance.Dress(itemId);
         }
-
-        if (!isHover && isShowDes)
-        {
-            isShowDes = false;
-            ItemDes._Instance.Hide();
-        }
-            
     }
 
     protected override void OnDragStart()
     {
         base.OnDragStart();
-        isHover = false;
+        ItemDes._Instance.Hide(itemId);
     }
 
     protected override void OnDragDropRelease(GameObject surface)
@@ -103,10 +94,14 @@ public class InventoryItem : UIDragDropItem
     public void OnHoverOver()
     {
         isHover = true;
+        ItemDes._Instance.Show(itemId);
     }
 
     public void OnHoverOut()
     {
         isHover = false;
+        ItemDes._Instance.Hide(itemId);
     }
+
+    
 }

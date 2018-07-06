@@ -22,7 +22,9 @@ public class FunctionBar : MonoBehaviour
     }
 
     public void OnEquipButtonClick()
-    {}
+    {
+        Equipment._Instance.SwitchEquipment();
+    }
 
     public void OnSkillButtonClick()
     {}

@@ -31,7 +31,7 @@ public class ObjectsInfo : MonoBehaviour
             string icon_name = proArray[2];
             string str_type = proArray[3];
             ObjectType type = ObjectType.None;
-            switch (str_type) 
+            switch (str_type)
             {
                 case "Drug":
                     type = ObjectType.Drug;
@@ -45,7 +45,7 @@ public class ObjectsInfo : MonoBehaviour
             }
             info.id = id; info.name = name; info.icon_name = icon_name;
             info.type = type;
-            if (type == ObjectType.Drug) 
+            if (type == ObjectType.Drug)
             {
                 int hp = int.Parse(proArray[4]);
                 int mp = int.Parse(proArray[5]);
@@ -53,6 +53,50 @@ public class ObjectsInfo : MonoBehaviour
                 int price_buy = int.Parse(proArray[7]);
                 info.hp = hp; info.mp = mp;
                 info.price_buy = price_buy; info.price_sell = price_sell;
+            }
+            else if (type == ObjectType.Equip)
+            {
+                info.attack = int.Parse(proArray[4]);
+                info.defend = int.Parse(proArray[5]);
+                info.speed = int.Parse(proArray[6]);
+                info.price_sell = int.Parse(proArray[9]);
+                info.price_buy = int.Parse(proArray[10]);
+                string str_dresstype = proArray[7];
+                switch (str_dresstype)
+                {
+                    case "Headgear":
+                        info.dressType = DressType.Headgear;
+                        break;
+                    case "Armor":
+                        info.dressType = DressType.Armor;
+                        break;
+                    case "LeftHand":
+                        info.dressType = DressType.LeftHand;
+                        break;
+                    case "RightHand":
+                        info.dressType = DressType.RightHand;
+                        break;
+                    case "Shoe":
+                        info.dressType = DressType.Shoe;
+                        break;
+                    case "Accessory":
+                        info.dressType = DressType.Accessory;
+                        break;
+                }
+
+                string str_applicationType = proArray[8];
+                switch (str_applicationType)
+                {
+                    case "Swordman":
+                        info.applicationType = ApplicationType.Swordman;
+                        break;
+                    case "Magician":
+                        info.applicationType = ApplicationType.Magician;
+                        break;
+                    case "Common":
+                        info.applicationType = ApplicationType.Common;
+                        break;
+                }
             }
 
             objectInfoDict.Add(id, info);
@@ -79,6 +123,23 @@ public enum ObjectType {
     None
 }
 
+public enum DressType
+{
+    Headgear,
+    Armor,
+    RightHand,
+    LeftHand,
+    Shoe,
+    Accessory
+}
+
+public enum ApplicationType
+{
+    Swordman,
+    Magician,
+    Common
+}
+ 
 //id
 //名称
 //icon名称
@@ -96,4 +157,10 @@ public class ObjectInfo {
     public int mp;
     public int price_sell;
     public int price_buy;
+
+    public int attack;
+    public int defend;
+    public int speed;
+    public DressType dressType;
+    public ApplicationType applicationType;
 }
