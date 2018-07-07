@@ -19,6 +19,10 @@ public class Equipment : MonoBehaviour
     private GameObject accessory;
     private PlayerStatus playerStatus;
 
+    private int attack;
+    private int defend;
+    private  int speed;
+
     void Awake()
     {
         _Instance = this;
@@ -92,9 +96,67 @@ public class Equipment : MonoBehaviour
         }
         else
         {
+            Inventory._Instance.GetItem(equipmentItem.currentItemId);
             equipmentItem.SetInfo(info);
         }
-
+        UpdateProperty();
         return true;
+    }
+
+    public void TakeOff(int id, GameObject go)
+    {
+        Inventory._Instance.GetItem(id);
+        DestroyImmediate(go);
+        UpdateProperty();
+    }
+
+    void UpdateProperty()
+    {
+        attack = 0;
+        defend = 0;
+        speed = 0;
+
+        EquipmentItem headgearItem = headgear.GetComponentInChildren<EquipmentItem>();
+        PlusProperty(headgearItem);
+        EquipmentItem armorItem = armor.GetComponentInChildren<EquipmentItem>();
+        PlusProperty(armorItem);
+        EquipmentItem leftHandItem = leftHand.GetComponentInChildren<EquipmentItem>();
+        PlusProperty(leftHandItem);
+        EquipmentItem rightHandItem = rightHand.GetComponentInChildren<EquipmentItem>();
+        PlusProperty(rightHandItem);
+        EquipmentItem shoeItem = shoe.GetComponentInChildren<EquipmentItem>();
+        PlusProperty(shoeItem);
+        EquipmentItem accessoryItem = accessory.GetComponentInChildren<EquipmentItem>();
+        PlusProperty(accessoryItem);
+
+        //Debug.Log("attack:" + attack + ",defend:" + defend + ",speed:" + speed);
+    }
+
+    void PlusProperty(EquipmentItem item)
+    {
+        if(item == null)
+        {
+            return;
+        }
+
+        PlusProperty(item.currentItemId);
+    }
+
+    void PlusProperty(int id)
+    {
+        ObjectInfo info = ObjectsInfo._Instance.GetObjectInfo(id);
+        PlusProperty(info);
+    }
+
+    void PlusProperty(ObjectInfo info)
+    {
+        if(info == null)
+        {
+            return;
+        }
+
+        attack += info.attack;
+        defend += info.defend;
+        speed += info.speed;
     }
 }

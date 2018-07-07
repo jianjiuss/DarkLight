@@ -27,7 +27,9 @@ public class FunctionBar : MonoBehaviour
     }
 
     public void OnSkillButtonClick()
-    {}
+    {
+        Skill._Instance.SwitchSkill();
+    }
 
     public void OnSettingButtonClick()
     {}

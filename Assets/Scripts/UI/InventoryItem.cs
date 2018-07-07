@@ -24,7 +24,13 @@ public class InventoryItem : UIDragDropItem
         base.Update();
         if(isHover && Input.GetMouseButtonDown(1))
         {
-            Equipment._Instance.Dress(itemId);
+            ItemDes._Instance.Hide(itemId);
+            bool dressSuccess = Equipment._Instance.Dress(itemId);
+            if(dressSuccess)
+            {
+                InventoryItemGrid itemGrid = gameObject.transform.parent.GetComponent<InventoryItemGrid>();
+                itemGrid.SubNum();
+            }
         }
     }
 
@@ -46,7 +52,7 @@ public class InventoryItem : UIDragDropItem
                 if (newItemGrid != oldItemGrid)
                 {
                     this.transform.parent = surface.transform;
-                    newItemGrid.SetId(oldItemGrid.id, oldItemGrid.num);
+                    newItemGrid.SetId(oldItemGrid.id, oldItemGrid.currentNumb);
                     oldItemGrid.ClearInfo();
                 }
             }
@@ -57,11 +63,11 @@ public class InventoryItem : UIDragDropItem
                 InventoryItemGrid newItemGrid = surface.transform.parent.GetComponent<InventoryItemGrid>();
 
                 int tempId = newItemGrid.id;
-                int tempNum = newItemGrid.num;
+                int tempNum = newItemGrid.currentNumb;
                 
                 newItemGrid.ClearInfo();
                 this.transform.parent = newItemGrid.gameObject.transform;
-                newItemGrid.SetId(oldItemGrid.id, oldItemGrid.num);
+                newItemGrid.SetId(oldItemGrid.id, oldItemGrid.currentNumb);
                 
                 oldItemGrid.ClearInfo();
                 InventoryItem newItem = newItemGrid.GetComponentInChildren<InventoryItem>();

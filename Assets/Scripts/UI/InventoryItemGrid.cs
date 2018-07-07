@@ -5,7 +5,7 @@ using UnityEngine;
 public class InventoryItemGrid : MonoBehaviour 
 {
     public int id = 0;
-    public int num = 0;
+    public int currentNumb = 0;
     private UILabel numLabel;
     private ObjectInfo info;
 
@@ -14,10 +14,32 @@ public class InventoryItemGrid : MonoBehaviour
         numLabel = this.GetComponentInChildren<UILabel>();
 	}
 
-    public void PlusNum(int num = 1)
+    public void PlusNum(int numb = 1)
     {
-        this.num += num;
-        numLabel.text = this.num.ToString();
+        this.currentNumb += numb;
+        numLabel.text = this.currentNumb.ToString();
+    }
+
+    public bool SubNum(int numb = 1)
+    {
+        if(currentNumb < numb)
+        {
+            return false;
+        }
+
+        currentNumb -= numb;
+        if(currentNumb == 0)
+        {
+            ClearInfo();
+            GameObject item = GetComponentInChildren<InventoryItem>().gameObject;
+            Destroy(item);
+        }
+        else
+        {
+            numLabel.text = this.currentNumb.ToString();
+        }
+
+        return true;
     }
 
     public void SetId(int id, int num = 1)
@@ -26,7 +48,7 @@ public class InventoryItemGrid : MonoBehaviour
         InventoryItem item = GetComponentInChildren<InventoryItem>();
         item.SetIconName(id, info.icon_name);
         numLabel.enabled = true;
-        this.num = num;
+        this.currentNumb = num;
         numLabel.text = num.ToString();
         this.id = id;
     }
@@ -35,7 +57,7 @@ public class InventoryItemGrid : MonoBehaviour
     {
         id = 0;
         info = null;
-        num = 0;
+        currentNumb = 0;
         numLabel.enabled = false;
     }
 }
