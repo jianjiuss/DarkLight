@@ -225,6 +225,7 @@
     <Compile Include="Assets\Scripts\CharacterCreation\CharacterCreation.cs" />
     <Compile Include="Assets\Scripts\Custom\CursorManager.cs" />
     <Compile Include="Assets\Scripts\Custom\ObjectsInfo.cs" />
+    <Compile Include="Assets\Scripts\Custom\SkillsInfo.cs" />
     <Compile Include="Assets\Scripts\Custom\Tags.cs" />
     <Compile Include="Assets\Scripts\NPC\BarNPC.cs" />
     <Compile Include="Assets\Scripts\NPC\DrugNpc.cs" />
@@ -238,11 +239,18 @@
     <Compile Include="Assets\Scripts\Start\MovieCamera.cs" />
     <Compile Include="Assets\Scripts\Start\PressAnyKey.cs" />
     <Compile Include="Assets\Scripts\UI\DrugShop.cs" />
+    <Compile Include="Assets\Scripts\UI\Equipment.cs" />
+    <Compile Include="Assets\Scripts\UI\EquipmentItem.cs" />
     <Compile Include="Assets\Scripts\UI\FunctionBar.cs" />
+    <Compile Include="Assets\Scripts\UI\HeadStatus.cs" />
     <Compile Include="Assets\Scripts\UI\Inventory.cs" />
     <Compile Include="Assets\Scripts\UI\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\UI\InventoryItemGrid.cs" />
     <Compile Include="Assets\Scripts\UI\ItemDes.cs" />
+    <Compile Include="Assets\Scripts\UI\ShortcutGrid.cs" />
+    <Compile Include="Assets\Scripts\UI\Skill.cs" />
+    <Compile Include="Assets\Scripts\UI\SkillIcon.cs" />
+    <Compile Include="Assets\Scripts\UI\SkillItem.cs" />
     <Compile Include="Assets\Scripts\UI\Status.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +299,9 @@
     <None Include="Assets\RPG\Model\Model Character\Magician\Magician_Animation.txt" />
     <None Include="Assets\RPG\Model\Model Character\Swordman\Swordman_Animation.txt" />
     <None Include="Assets\RPG\Model\Model Enemy\Wolf\Wolf_Animation.txt" />
+    <None Include="Assets\RPG\Shader\MaskShader.shader" />
+    <None Include="Assets\RPG\Shader\Transparent_Outline.shader" />
+    <None Include="Assets\SkillsInfoList.txt" />
     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />

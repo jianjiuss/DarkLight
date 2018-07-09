@@ -17,6 +17,8 @@ public class PlayerStatus : MonoBehaviour
     public int level = 1;
     public int hp = 100;
     public int mp = 100;
+    public float hpRemain = 100;
+    public float mpRemain = 100;
     public int coin = 200;
 
     public int attack = 20;
