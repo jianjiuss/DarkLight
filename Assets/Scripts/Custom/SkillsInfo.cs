@@ -21,6 +21,19 @@ public class SkillsInfo : MonoBehaviour {
         return info;
     }
 
+    public int[] GetSkillInfoBy(ApplicableRole role)
+    {
+        List<int> list = new List<int>();
+        foreach(var item in skillInfoDict.Values)
+        {
+            if(item.applicableRole == role)
+            {
+                list.Add(item.id);
+            }
+        }
+        return list.ToArray();
+    }
+
     //初始化技能信息字典
     void InitSkillInfoDict() {
         string text = skillsInfoText.text;

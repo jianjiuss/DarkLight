@@ -212,7 +212,10 @@
      <Compile Include="Assets\Scripts\UI\InventoryItem.cs" />
      <Compile Include="Assets\Scripts\UI\InventoryItemGrid.cs" />
      <Compile Include="Assets\Scripts\UI\ItemDes.cs" />
+     <Compile Include="Assets\Scripts\UI\ShortcutGrid.cs" />
      <Compile Include="Assets\Scripts\UI\Skill.cs" />
+     <Compile Include="Assets\Scripts\UI\SkillIcon.cs" />
+     <Compile Include="Assets\Scripts\UI\SkillItem.cs" />
      <Compile Include="Assets\Scripts\UI\Status.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.8.2.txt" />
@@ -233,8 +236,10 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (TextureClip).shader" />
      <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
      <None Include="Assets\SkillsInfoList.txt" />
+     <None Include="Assets\RPG\Shader\Transparent_Outline.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 3.shader" />
+     <None Include="Assets\RPG\Shader\MaskShader.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 1.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
