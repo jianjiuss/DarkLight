@@ -12,26 +12,63 @@ public enum GridType
 public class ShortcutGrid : MonoBehaviour 
 {
     public KeyCode keycode;
-    private UISprite skillIcon;
+    private UISprite shortcutIcon;
     private SkillInfo skillInfo;
+    private ObjectInfo objectInfo;
     private GridType gridType;
 
     void Awake()
     {
-        skillIcon = transform.Find("Icon").GetComponent<UISprite>();
-        skillIcon.gameObject.SetActive(false);
+        shortcutIcon = transform.Find("Icon").GetComponent<UISprite>();
+        shortcutIcon.gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(keycode))
+        {
+            UseItem();
+        }
+    }
+
+    private void UseItem()
+    {
+        if(gridType == GridType.Inventory)
+        {
+            if(!Inventory._Instance.UseItem(objectInfo.id))
+            {
+                shortcutIcon.gameObject.SetActive(false);
+                objectInfo = null;
+                gridType = GridType.None;
+            }
+        }
+        else if(gridType == GridType.Skill)
+        {
+
+        }
     }
 
     public void SetSkill(int id)
     {
-        skillIcon.gameObject.SetActive(true);
+        objectInfo = null;
+        shortcutIcon.gameObject.SetActive(true);
         gridType = GridType.Skill;
         skillInfo = SkillsInfo._instance.GetSkillInfoById(id);
-        skillIcon.spriteName = skillInfo.icon_name;
+        shortcutIcon.spriteName = skillInfo.icon_name;
     }
 
     public void SetInventory(int id)
     {
+        skillInfo = null;
+        ObjectInfo info = ObjectsInfo._Instance.GetObjectInfo(id);
+        if(info.type != ObjectType.Drug)
+        {
+            return;
+        }
 
+        shortcutIcon.gameObject.SetActive(true);
+        gridType = GridType.Inventory;
+        objectInfo = info;
+        shortcutIcon.spriteName = info.icon_name;
     }
 }

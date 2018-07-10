@@ -60,4 +60,19 @@ public class PlayerStatus : MonoBehaviour
         Inventory._Instance.UpdateCoinLabel();
         return true;
     }
+
+    public void PlusHpAndMp(int plusHp, int plusMp)
+    {
+        hpRemain += plusHp;
+        mpRemain += plusMp;
+
+        if(hpRemain > hp)
+        {
+            hpRemain = hp;
+        }
+        if(mpRemain > mp)
+        {
+            mpRemain = mp;
+        }
+    }
 }

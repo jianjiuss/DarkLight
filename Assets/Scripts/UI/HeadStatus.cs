@@ -6,7 +6,7 @@ public class HeadStatus : MonoBehaviour
 {
     public static HeadStatus _Instance;
 
-    private UILabel name;
+    private UILabel headName;
 
     private UISlider hpBar;
     private UISlider mpBar;
@@ -20,7 +20,7 @@ public class HeadStatus : MonoBehaviour
     {
         _Instance = this;
         playerStatus = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<PlayerStatus>();
-        name = transform.Find("Name").GetComponent<UILabel>();
+        headName = transform.Find("Name").GetComponent<UILabel>();
         hpBar = transform.Find("Hp").GetComponent<UISlider>();
         mpBar = transform.Find("Mp").GetComponent<UISlider>();
         hpLabel = transform.Find("Hp/Thumb/Label").GetComponent<UILabel>();
@@ -32,9 +32,14 @@ public class HeadStatus : MonoBehaviour
         UpdateShow();
     }
 
+    void Update()
+    {
+        UpdateShow();
+    }
+
     public void UpdateShow()
     {
-        name.text = "Lv." + playerStatus.level + " " + playerStatus.name;
+        headName.text = "Lv." + playerStatus.level + " " + playerStatus.name;
         hpBar.value = playerStatus.hpRemain / playerStatus.hp;
         mpBar.value = playerStatus.mpRemain / playerStatus.mp;
         hpLabel.text = playerStatus.hpRemain + "/" + playerStatus.hp;

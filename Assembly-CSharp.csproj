@@ -196,6 +196,7 @@
      <Compile Include="Assets\Scripts\NPC\BarNPC.cs" />
      <Compile Include="Assets\Scripts\NPC\DrugNpc.cs" />
      <Compile Include="Assets\Scripts\NPC\NPC.cs" />
+     <Compile Include="Assets\Scripts\NPC\WeaponNpc.cs" />
      <Compile Include="Assets\Scripts\Player\FollowPlayer.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerAnimation.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerDir.cs" />
@@ -208,15 +209,19 @@
      <Compile Include="Assets\Scripts\UI\Equipment.cs" />
      <Compile Include="Assets\Scripts\UI\EquipmentItem.cs" />
      <Compile Include="Assets\Scripts\UI\FunctionBar.cs" />
+     <Compile Include="Assets\Scripts\UI\HeadStatus.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory.cs" />
      <Compile Include="Assets\Scripts\UI\InventoryItem.cs" />
      <Compile Include="Assets\Scripts\UI\InventoryItemGrid.cs" />
      <Compile Include="Assets\Scripts\UI\ItemDes.cs" />
+     <Compile Include="Assets\Scripts\UI\MiniMap.cs" />
      <Compile Include="Assets\Scripts\UI\ShortcutGrid.cs" />
      <Compile Include="Assets\Scripts\UI\Skill.cs" />
      <Compile Include="Assets\Scripts\UI\SkillIcon.cs" />
      <Compile Include="Assets\Scripts\UI\SkillItem.cs" />
      <Compile Include="Assets\Scripts\UI\Status.cs" />
+     <Compile Include="Assets\Scripts\UI\WeaponItem.cs" />
+     <Compile Include="Assets\Scripts\UI\WeaponShop.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.8.2.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />

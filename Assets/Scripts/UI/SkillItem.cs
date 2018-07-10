@@ -6,7 +6,7 @@ public class SkillItem : MonoBehaviour
 {
     public int id;
     private UISprite icon;
-    private UILabel name;
+    private UILabel SkillName;
     private UILabel type;
     private UILabel des;
     private UILabel mp;
@@ -15,7 +15,7 @@ public class SkillItem : MonoBehaviour
     private void InitProperty()
     {
         icon = transform.Find("Icon").GetComponentInChildren<UISprite>();
-        name = transform.Find("Property/NameBg/Name").GetComponentInChildren<UILabel>();
+        SkillName = transform.Find("Property/NameBg/Name").GetComponentInChildren<UILabel>();
         type = transform.Find("Property/TypeBg/Type").GetComponentInChildren<UILabel>();
         des = transform.Find("Property/DesBg/Des").GetComponentInChildren<UILabel>();
         mp = transform.Find("Property/MpBg/Mp").GetComponentInChildren<UILabel>();
@@ -42,7 +42,7 @@ public class SkillItem : MonoBehaviour
         InitProperty();
         SkillInfo info = SkillsInfo._instance.GetSkillInfoById(id);
         icon.spriteName = info.icon_name;
-        name.text = info.name;
+        SkillName.text = info.name;
         switch(info.applyType)
         {
             case ApplyType.Buff:

@@ -112,6 +112,19 @@ public class ObjectsInfo : MonoBehaviour
         }
         return null;
     }
+
+    public int[] GetObjectInfos(ObjectType type)
+    {
+        List<int> ids = new List<int>();
+        foreach(var item in objectInfoDict.Values)
+        {
+            if(item.type == type)
+            {
+                ids.Add(item.id);
+            }
+        }
+        return ids.ToArray();
+    }
 }
 
 

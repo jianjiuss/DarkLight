@@ -7,10 +7,12 @@ public class InventoryItem : UIDragDropItem
     private UISprite sprite;
     private int itemId;
     private bool isHover = false;
+    private PlayerStatus playerStatus;
 
     void Awake()
     {
         sprite = this.GetComponent<UISprite>();
+        playerStatus = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<PlayerStatus>();
     }
 
     protected override void Start()
@@ -24,14 +26,33 @@ public class InventoryItem : UIDragDropItem
         base.Update();
         if(isHover && Input.GetMouseButtonDown(1))
         {
-            ItemDes._Instance.Hide(itemId);
+            UseItem();
+        }
+    }
+
+    public bool UseItem()
+    {
+        ItemDes._Instance.Hide(itemId);
+        ObjectInfo info = ObjectsInfo._Instance.GetObjectInfo(itemId);
+        if(info.type == ObjectType.Equip)
+        {
             bool dressSuccess = Equipment._Instance.Dress(itemId);
-            if(dressSuccess)
+            if (dressSuccess)
             {
                 InventoryItemGrid itemGrid = gameObject.transform.parent.GetComponent<InventoryItemGrid>();
                 itemGrid.SubNum();
             }
         }
+        else if(info.type == ObjectType.Drug)
+        {
+            InventoryItemGrid itemGrid = gameObject.transform.parent.GetComponent<InventoryItemGrid>();
+            if(itemGrid.SubNum())
+            {
+                playerStatus.PlusHpAndMp(info.hp, info.mp);
+                return true;
+            }
+        }
+        return false;
     }
 
     protected override void OnDragStart()
@@ -56,7 +77,6 @@ public class InventoryItem : UIDragDropItem
                     oldItemGrid.ClearInfo();
                 }
             }
-
             else if(surface.tag == Tags.inventory_item)
             {
                 InventoryItemGrid oldItemGrid = gameObject.transform.parent.GetComponent<InventoryItemGrid>();
@@ -74,6 +94,11 @@ public class InventoryItem : UIDragDropItem
                 newItem.gameObject.transform.parent = oldItemGrid.gameObject.transform;
                 oldItemGrid.SetId(tempId, tempNum);
                 newItem.ResetPosition();
+            }
+            else if(surface.tag == Tags.shortcut)
+            {
+                ShortcutGrid shortcutGrid = surface.GetComponent<ShortcutGrid>();
+                shortcutGrid.SetInventory(itemId);
             }
         }
         ResetPosition();

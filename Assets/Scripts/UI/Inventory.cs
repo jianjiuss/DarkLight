@@ -76,4 +76,16 @@ public class Inventory : MonoBehaviour
         isInventoryShow = false;
         tween.PlayReverse();
     }
+
+    public bool UseItem(int id)
+    {
+        foreach(var item in itemGridList)
+        {
+            if(item.id == id)
+            {
+                return item.GetComponentInChildren<InventoryItem>().UseItem();
+            }
+        }
+        return false;
+    }
 }
