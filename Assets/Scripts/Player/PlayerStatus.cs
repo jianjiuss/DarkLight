@@ -14,7 +14,7 @@ public class PlayerStatus : MonoBehaviour
 {
     public HeroType heroType;
 
-    public int level = 1;
+    public int level = 1; //UpGradeExp = 100 + level * 30
     public int hp = 100;
     public int mp = 100;
     public float hpRemain = 100;
@@ -27,8 +27,15 @@ public class PlayerStatus : MonoBehaviour
     public int def_plus = 0;
     public int speed = 20;
     public int speed_plus = 0;
+    public int exp = 0;
+
 
     public int poin_remain = 0;
+
+    private void Start()
+    {
+        GetExp(0);
+    }
 
     public void GetCoin(int count)
     {
@@ -59,6 +66,19 @@ public class PlayerStatus : MonoBehaviour
         coin -= spendMoney;
         Inventory._Instance.UpdateCoinLabel();
         return true;
+    }
+
+    public void GetExp(int value)
+    {
+        exp += value;
+        int totalExp = 100 + level * 30;
+        while(exp >= totalExp)
+        {
+            level++;
+            exp -= totalExp;
+            totalExp = 100 + level * 30;
+        }
+        ExpBar._Instance.SetValue(exp / totalExp);
     }
 
     public void PlusHpAndMp(int plusHp, int plusMp)

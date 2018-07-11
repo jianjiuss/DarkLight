@@ -100,6 +100,7 @@ public class InventoryItem : UIDragDropItem
                 ShortcutGrid shortcutGrid = surface.GetComponent<ShortcutGrid>();
                 shortcutGrid.SetInventory(itemId);
             }
+            isHover = false;
         }
         ResetPosition();
     }
