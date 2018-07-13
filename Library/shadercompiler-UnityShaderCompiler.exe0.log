@@ -1,75 +1,75 @@
 Base path: C:/Program Files/Unity/Editor/Data
 Cmd: initializeCompiler
 Cmd: preprocess
-  insize=238 outsize=238 ok=1
+  insize=219 outsize=219 ok=1
 Cmd: preprocess
-  insize=2524 outsize=963 ok=1
+  insize=2400 outsize=901 ok=1
 Cmd: preprocess
-  insize=1739 outsize=579 ok=1
+  insize=1654 outsize=544 ok=1
 Cmd: preprocess
-  insize=3107 outsize=1004 ok=1
+  insize=2969 outsize=941 ok=1
 Cmd: preprocess
-  insize=2518 outsize=567 ok=1
+  insize=2413 outsize=532 ok=1
 Cmd: preprocess
-  insize=2183 outsize=1002 ok=1
+  insize=2069 outsize=938 ok=1
 Cmd: preprocess
-  insize=2145 outsize=565 ok=1
+  insize=2047 outsize=529 ok=1
 Cmd: preprocess
-  insize=373 outsize=373 ok=1
+  insize=354 outsize=354 ok=1
 Cmd: preprocess
-  insize=516 outsize=516 ok=1
+  insize=480 outsize=480 ok=1
 Cmd: preprocess
   error: 1 plat 20 at (155): Both vertex and fragment programs must be present in a shader snippet. Excluding it from compilation.
-  insize=3763 outsize=3874 ok=1
+  insize=3599 outsize=3808 ok=1
 Cmd: preprocess
-  insize=2639 outsize=623 ok=1
+  insize=2533 outsize=587 ok=1
 Cmd: preprocess
-  insize=2264 outsize=621 ok=1
+  insize=2166 outsize=585 ok=1
 Cmd: preprocess
-  insize=1563 outsize=697 ok=1
+  insize=1487 outsize=661 ok=1
 Cmd: preprocess
-  insize=1637 outsize=947 ok=1
+  insize=1535 outsize=882 ok=1
 Cmd: preprocess
-  insize=1666 outsize=715 ok=1
+  insize=1586 outsize=678 ok=1
 Cmd: preprocess
-  insize=2899 outsize=965 ok=1
+  insize=2767 outsize=903 ok=1
 Cmd: preprocess
-  insize=1824 outsize=993 ok=1
+  insize=1719 outsize=930 ok=1
 Cmd: preprocess
-  insize=1725 outsize=621 ok=1
+  insize=1643 outsize=585 ok=1
 Cmd: preprocess
-  insize=1739 outsize=1072 ok=1
+  insize=1659 outsize=1025 ok=1
 Cmd: preprocess
-  insize=3310 outsize=1900 ok=1
+  insize=3167 outsize=1820 ok=1
 Cmd: preprocess
-  insize=1593 outsize=565 ok=1
+  insize=1511 outsize=530 ok=1
 Cmd: preprocess
   insize=3042 outsize=1917 ok=1
 Cmd: preprocess
-  insize=2732 outsize=1002 ok=1
+  insize=2602 outsize=939 ok=1
 Cmd: preprocess
-  insize=1975 outsize=963 ok=1
+  insize=1867 outsize=900 ok=1
 Cmd: preprocess
-  insize=2666 outsize=581 ok=1
+  insize=2557 outsize=546 ok=1
 Cmd: preprocess
-  insize=469 outsize=469 ok=1
+  insize=435 outsize=435 ok=1
 Cmd: preprocess
-  insize=1659 outsize=756 ok=1
+  insize=1583 outsize=719 ok=1
 Cmd: preprocess
-  insize=1630 outsize=594 ok=1
+  insize=1548 outsize=559 ok=1
 Cmd: preprocess
-  insize=1595 outsize=954 ok=1
+  insize=1497 outsize=892 ok=1
 Cmd: preprocess
-  insize=6303 outsize=3718 ok=1
+  insize=6033 outsize=3625 ok=1
 Cmd: preprocess
-  insize=1648 outsize=1001 ok=1
+  insize=1547 outsize=935 ok=1
 Cmd: preprocess
   insize=2361 outsize=2422 ok=1
 Cmd: preprocess
-  insize=1445 outsize=577 ok=1
+  insize=1370 outsize=542 ok=1
 Cmd: preprocess
-  insize=1393 outsize=570 ok=1
+  insize=1315 outsize=535 ok=1
 Cmd: preprocess
-  insize=2291 outsize=579 ok=1
+  insize=2190 outsize=544 ok=1
 Cmd: preprocess
-  insize=1859 outsize=1049 ok=1
+  insize=1751 outsize=981 ok=1

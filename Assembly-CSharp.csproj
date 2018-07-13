@@ -193,6 +193,7 @@
      <Compile Include="Assets\Scripts\Custom\ObjectsInfo.cs" />
      <Compile Include="Assets\Scripts\Custom\SkillsInfo.cs" />
      <Compile Include="Assets\Scripts\Custom\Tags.cs" />
+     <Compile Include="Assets\Scripts\Enemy\WolfBaby.cs" />
      <Compile Include="Assets\Scripts\NPC\BarNPC.cs" />
      <Compile Include="Assets\Scripts\NPC\DrugNpc.cs" />
      <Compile Include="Assets\Scripts\NPC\NPC.cs" />
@@ -208,6 +209,7 @@
      <Compile Include="Assets\Scripts\UI\DrugShop.cs" />
      <Compile Include="Assets\Scripts\UI\Equipment.cs" />
      <Compile Include="Assets\Scripts\UI\EquipmentItem.cs" />
+     <Compile Include="Assets\Scripts\UI\ExpBar.cs" />
      <Compile Include="Assets\Scripts\UI\FunctionBar.cs" />
      <Compile Include="Assets\Scripts\UI\HeadStatus.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory.cs" />
