@@ -8,15 +8,22 @@ public class PlayerDir : MonoBehaviour
     public Vector3 targetPosition = Vector3.zero;
     private bool isMouseLeftButtonDown = false;
     private PlayerMove playerMove;
+    private PlayerAttack playerAttack;
 
     void Start()
     {
         playerMove = GetComponent<PlayerMove>();
+        playerAttack = GetComponent<PlayerAttack>();
         targetPosition = transform.position;
     }
 
 	void Update () 
     {
+        if(playerAttack.state != PlayerState.ControlWalk)
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0) && UICamera.hoveredObject.name.Equals("UI Root"))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

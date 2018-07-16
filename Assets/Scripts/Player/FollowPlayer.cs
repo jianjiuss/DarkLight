@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour 
 {
-    private Transform playerTransform;
+    public Transform playerTransform;
     private Vector3 offset;
     private bool isRightButtonDown = false;
     public float distance = 0;
     public float scrollSpeed = 1;
     public float XRotateSpeed = 1;
 
-	void Start () 
+	void Start() 
     {
-        playerTransform = GameObject.FindGameObjectWithTag(Tags.player).transform;
+        //playerTransform = GameObject.FindGameObjectWithTag(Tags.player).transform;
         offset = transform.position - playerTransform.position;
         transform.LookAt(playerTransform.position);
 	}
 
-	void Update () 
+	void Update() 
     {
+        if(playerTransform == null)
+        {
+            return;
+        }
+
         this.transform.position = playerTransform.position + offset;
         ScrollView();
         RotateView();

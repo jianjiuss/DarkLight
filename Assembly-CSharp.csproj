@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\HUD Text\Scripts\HUDText.cs" />
+     <Compile Include="Assets\HUD Text\Scripts\UIFollowTarget.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -200,6 +202,7 @@
      <Compile Include="Assets\Scripts\NPC\WeaponNpc.cs" />
      <Compile Include="Assets\Scripts\Player\FollowPlayer.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerAnimation.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerDir.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStatus.cs" />
@@ -212,6 +215,7 @@
      <Compile Include="Assets\Scripts\UI\ExpBar.cs" />
      <Compile Include="Assets\Scripts\UI\FunctionBar.cs" />
      <Compile Include="Assets\Scripts\UI\HeadStatus.cs" />
+     <Compile Include="Assets\Scripts\UI\HudTextParent.cs" />
      <Compile Include="Assets\Scripts\UI\Inventory.cs" />
      <Compile Include="Assets\Scripts\UI\InventoryItem.cs" />
      <Compile Include="Assets\Scripts\UI\InventoryItemGrid.cs" />
@@ -260,6 +264,7 @@
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\HUD Text\ReadMe - 1.11.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
      <None Include="Assets\OjbectsInfoList.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />

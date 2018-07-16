@@ -5,23 +5,35 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour 
 {
     private PlayerMove playerMove;
+    private PlayerAttack playerAttack;
     private new Animation animation;
 
     void Start()
     {
         this.animation = GetComponent<Animation>();
         playerMove = GetComponent<PlayerMove>();
+        playerAttack = GetComponent<PlayerAttack>();
     }
 
     void LateUpdate()
     {
-        if (playerMove.playerState == PlayerState.Idle)
+        if(playerAttack.state == PlayerState.ControlWalk)
         {
-            PlayAnimation("Idle");
+            if (playerMove.playerState == ControlWalkState.Idle)
+            {
+                PlayAnimation("Idle");
+            }
+            else if(playerMove.playerState == ControlWalkState.Run)
+            {
+                PlayAnimation("Run");
+            }
         }
-        else if(playerMove.playerState == PlayerState.Run)
+        else if(playerAttack.state == PlayerState.NormalAttack)
         {
-            PlayAnimation("Run");
+            if(playerAttack.attackState == AttackState.Moving)
+            {
+                PlayAnimation("Run");
+            }
         }
     }
 

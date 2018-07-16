@@ -10,4 +10,5 @@ public class Tags
     public const string inventory_item_grid = "InventoryItemGrid";
     public const string shortcut = "Shortcut";
     public const string miniMapCamera = "MiniMapCamera";
+    public const string enemy = "Enemy";
 }
