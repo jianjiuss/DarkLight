@@ -22,12 +22,12 @@ public class PlayerStatus : MonoBehaviour
     public int coin = 200;
 
     public int attack = 20;
-    public int attack_plus = 0;
+    public float attack_plus = 0;
     public int def = 20;
-    public int def_plus = 0;
+    public float def_plus = 0;
     public int speed = 20;
-    public int speed_plus = 0;
-    public int exp = 0;
+    public float speed_plus = 0;
+    public float exp = 0;
 
 
     public int poin_remain = 0;
@@ -71,7 +71,7 @@ public class PlayerStatus : MonoBehaviour
     public void GetExp(int value)
     {
         exp += value;
-        int totalExp = 100 + level * 30;
+        float totalExp = 100 + level * 30;
         while(exp >= totalExp)
         {
             level++;
@@ -94,5 +94,16 @@ public class PlayerStatus : MonoBehaviour
         {
             mpRemain = mp;
         }
+    }
+
+    public bool TakeMP(int value)
+    {
+        if(value > mpRemain)
+        {
+            return false;
+        }
+
+        mpRemain -= value;
+        return true;
     }
 }

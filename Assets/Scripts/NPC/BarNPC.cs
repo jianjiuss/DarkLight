@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BarNPC : MonoBehaviour 
 {
+    public static BarNPC _Instance;
+
     public TweenPosition questTweenPosition;
     public GameObject okButtonGo;
     public GameObject acceptButtonGo;
@@ -13,6 +15,11 @@ public class BarNPC : MonoBehaviour
 
     private bool isInTask;
     private PlayerStatus playerStatus;
+
+    void Awake()
+    {
+        _Instance = this;
+    }
 
     void Start()
     {
@@ -92,5 +99,13 @@ public class BarNPC : MonoBehaviour
         okButtonGo.SetActive(false);
         acceptButtonGo.SetActive(true);
         cancelButtonGo.SetActive(true);
+    }
+
+    public void OnKillWolf()
+    {
+        if(isInTask)
+        {
+            killCount++;
+        }
     }
 }

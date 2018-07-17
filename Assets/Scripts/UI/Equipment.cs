@@ -19,9 +19,9 @@ public class Equipment : MonoBehaviour
     private GameObject accessory;
     private PlayerStatus playerStatus;
 
-    private int attack;
-    private int defend;
-    private  int speed;
+    public int attack;
+    public int defend;
+    public int speed;
 
     void Awake()
     {
@@ -129,7 +129,6 @@ public class Equipment : MonoBehaviour
         EquipmentItem accessoryItem = accessory.GetComponentInChildren<EquipmentItem>();
         PlusProperty(accessoryItem);
 
-        //Debug.Log("attack:" + attack + ",defend:" + defend + ",speed:" + speed);
     }
 
     void PlusProperty(EquipmentItem item)

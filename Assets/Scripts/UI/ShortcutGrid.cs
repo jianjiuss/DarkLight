@@ -17,10 +17,20 @@ public class ShortcutGrid : MonoBehaviour
     private ObjectInfo objectInfo;
     private GridType gridType;
 
+    private PlayerStatus ps;
+    private PlayerAttack pa;
+
+
     void Awake()
     {
         shortcutIcon = transform.Find("Icon").GetComponent<UISprite>();
         shortcutIcon.gameObject.SetActive(false);
+    }
+
+    void Start()
+    {
+        ps = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<PlayerStatus>();
+        pa = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<PlayerAttack>();
     }
 
     void Update()
@@ -44,7 +54,12 @@ public class ShortcutGrid : MonoBehaviour
         }
         else if(gridType == GridType.Skill)
         {
-
+            bool success = ps.TakeMP(skillInfo.mp);
+            if(!success)
+            {
+                return;
+            }
+            pa.UseSkill(skillInfo);
         }
     }
 

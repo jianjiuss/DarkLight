@@ -106,6 +106,9 @@ public class SkillsInfo : MonoBehaviour {
                     break;
             }
             info.distance = float.Parse(pa[13]);
+            info.efxName = pa[14];
+            info.aniname = pa[15];
+            info.anitime = float.Parse(pa[16]);
             skillInfoDict.Add(info.id, info);
         }
     }
@@ -154,4 +157,7 @@ public class SkillInfo {
     public int level;
     public ReleaseType releaseType;
     public float distance;
+    public string efxName;
+    public string aniname;
+    public float anitime = 0;
 }

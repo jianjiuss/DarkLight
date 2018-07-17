@@ -29,5 +29,10 @@ public class CursorManager : MonoBehaviour
     {
         Cursor.SetCursor(cursor_npc_talk, hotspot, mode);
     }
+
+    public void SetAttack()
+    {
+        Cursor.SetCursor(cursor_attack, hotspot, mode);
+    }
 }
 

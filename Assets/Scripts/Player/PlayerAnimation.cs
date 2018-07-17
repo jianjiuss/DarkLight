@@ -35,6 +35,10 @@ public class PlayerAnimation : MonoBehaviour
                 PlayAnimation("Run");
             }
         }
+        else if(playerAttack.state == PlayerState.Death)
+        {
+            PlayAnimation("Death");
+        }
     }
 
     void PlayAnimation(string name)
