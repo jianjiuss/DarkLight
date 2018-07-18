@@ -199,6 +199,7 @@
      <Compile Include="Assets\Scripts\Custom\Tags.cs" />
      <Compile Include="Assets\Scripts\Enemy\WolfBaby.cs" />
      <Compile Include="Assets\Scripts\Enemy\WolfBabySpawn.cs" />
+     <Compile Include="Assets\Scripts\MagicSphere.cs" />
      <Compile Include="Assets\Scripts\NPC\BarNPC.cs" />
      <Compile Include="Assets\Scripts\NPC\DrugNpc.cs" />
      <Compile Include="Assets\Scripts\NPC\NPC.cs" />

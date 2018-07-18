@@ -124,10 +124,8 @@ public class WolfBaby : MonoBehaviour
 
     private void AutoAttack()
     {
-        Debug.Log("Enter AutoAttack");
         if (target != null)
         {
-            Debug.Log("Target not null");
             PlayerState playerState = target.GetComponent<PlayerAttack>().state;
             if (playerState == PlayerState.Death)
             {
@@ -143,7 +141,6 @@ public class WolfBaby : MonoBehaviour
             }
             else if (distance <= minDistance)
             {//自动攻击
-                Debug.Log("Attack");
                 attack_timer += Time.deltaTime;
                 animation.CrossFade(aniname_attack_now);
                 transform.LookAt(target);
@@ -152,7 +149,6 @@ public class WolfBaby : MonoBehaviour
                     if (attack_timer > time_normalattack)
                     {
                         //产生伤害 
-                        Debug.Log("Attack");
                         target.GetComponent<PlayerAttack>().TakeDamage(attack);
                         aniname_attack_now = idleAnimationName;
                     }
@@ -161,7 +157,6 @@ public class WolfBaby : MonoBehaviour
                 {
                     if (attack_timer > time_crazyattack)
                     {
-                        Debug.Log("Crazy Attack");
                         //产生伤害 
                         target.GetComponent<PlayerAttack>().TakeDamage(attack);
                         aniname_attack_now = idleAnimationName;

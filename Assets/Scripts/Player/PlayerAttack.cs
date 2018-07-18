@@ -44,6 +44,9 @@ public class PlayerAttack : MonoBehaviour {
     private GameObject hudTextFollow;
     private HUDText hudtext;
 
+    public bool isLockingTarget = false;
+    private SkillInfo curInfo;
+
     public GameObject[] efxs;
     private Dictionary<string, GameObject> efxMap = new Dictionary<string, GameObject>();
 
@@ -71,7 +74,7 @@ public class PlayerAttack : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && state != PlayerState.Death)
+        if (!isLockingTarget && Input.GetMouseButtonDown(0) && state != PlayerState.Death)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit raycastHit;
@@ -129,6 +132,11 @@ public class PlayerAttack : MonoBehaviour {
                 playerMove.SimpleMove(targetTransform.position);
             }
         }
+
+        if(isLockingTarget && Input.GetMouseButtonDown(0))
+        {
+            OnLockTarget();
+        }
     }
 
     public int GetAttack()
@@ -158,7 +166,6 @@ public class PlayerAttack : MonoBehaviour {
         }
         else
         {
-            Debug.Log("been attach");
             hudtext.Add("-" + temp, Color.red, 1);
             ps.hpRemain -= temp;
             if(ps.hpRemain <= 0)
@@ -193,7 +200,83 @@ public class PlayerAttack : MonoBehaviour {
             case ApplyType.Buff:
                 StartCoroutine(OnBuffSkillUse(info));
                 break;
+            case ApplyType.SingleTarget:
+                OnSingleTargetSkillUse(info);
+                break;
+            case ApplyType.MultiTarget:
+                OnMultiTargetSkillUse(info);
+                break;
         }
+    }
+
+    private void OnMultiTargetSkillUse(SkillInfo info)
+    {
+        state = PlayerState.SkillAttack;
+        CursorManager._Instance.SetLockTarget();
+        isLockingTarget = true;
+        curInfo = info;
+    }
+
+    private void OnLockTarget()
+    {
+        isLockingTarget = false;
+        switch(curInfo.applyType)
+        {
+            case ApplyType.SingleTarget:
+                StartCoroutine(OnLockSingleTarget());
+                break;
+            case ApplyType.MultiTarget:
+                StartCoroutine(OnLockMultiTarget());
+                break;
+        }
+    }
+
+    private IEnumerator OnLockMultiTarget()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hitInfo;
+        bool isCollider = Physics.Raycast(ray, out hitInfo, 11);
+        CursorManager._Instance.SetNormal();
+        if(isCollider)
+        {
+            animation.CrossFade(curInfo.aniname);
+            yield return new WaitForSeconds(curInfo.anitime);
+            state = PlayerState.ControlWalk;
+
+            GameObject prefab = null;
+            efxMap.TryGetValue(curInfo.efxName, out prefab);
+            GameObject go = GameObject.Instantiate(prefab, hitInfo.point + Vector3.up * 0.5f , Quaternion.identity);
+            MagicSphere ms = go.GetComponent<MagicSphere>();
+            ms.attack = GetAttack() * (curInfo.applyValue / 100f);
+        }
+        state = PlayerState.ControlWalk;
+    }
+
+    private IEnumerator OnLockSingleTarget()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hitInfo;
+        bool isCollider = Physics.Raycast(ray, out hitInfo);
+        CursorManager._Instance.SetNormal();
+        if(isCollider && hitInfo.collider.tag == Tags.enemy)
+        {
+            animation.CrossFade(curInfo.aniname);
+            yield return new WaitForSeconds(curInfo.anitime);
+            GameObject prefab = null;
+            efxMap.TryGetValue(curInfo.efxName, out prefab);
+            GameObject.Instantiate(prefab, hitInfo.collider.transform.position, Quaternion.identity);
+
+            hitInfo.collider.GetComponent<WolfBaby>().TakeDamage((int)(GetAttack() * (curInfo.applyValue / 100f)));
+        }
+        state = PlayerState.ControlWalk;
+    }
+
+    void OnSingleTargetSkillUse(SkillInfo info)
+    {
+        state = PlayerState.SkillAttack;
+        CursorManager._Instance.SetLockTarget();
+        isLockingTarget = true;
+        curInfo = info;
     }
 
     IEnumerator OnPassiveSkillUse(SkillInfo info)

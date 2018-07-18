@@ -24,7 +24,7 @@ public class PlayerDir : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButtonDown(0) && UICamera.hoveredObject.name.Equals("UI Root"))
+        if (!playerAttack.isLockingTarget && Input.GetMouseButtonDown(0) && UICamera.hoveredObject.name.Equals("UI Root"))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit raycastHit;

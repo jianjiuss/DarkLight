@@ -15,6 +15,7 @@ public class CursorManager : MonoBehaviour
     private Vector2 hotspot = Vector2.zero;
     private CursorMode mode = CursorMode.Auto;
 
+    private bool isSetLockTarget = false;
     void Start()
     {
         _Instance = this;
@@ -22,17 +23,32 @@ public class CursorManager : MonoBehaviour
 
     public void SetNormal()
     {
+        isSetLockTarget = false;
         Cursor.SetCursor(cursor_normal, hotspot, mode);
     }
 
     public void SetNpcTalk()
     {
+        if(isSetLockTarget)
+        {
+            return;
+        }
         Cursor.SetCursor(cursor_npc_talk, hotspot, mode);
     }
 
     public void SetAttack()
     {
+        if(isSetLockTarget)
+        {
+            return;
+        }
         Cursor.SetCursor(cursor_attack, hotspot, mode);
+    }
+
+    public void SetLockTarget()
+    {
+        isSetLockTarget = true;
+        Cursor.SetCursor(cursor_lockTarget, hotspot, mode);
     }
 }
 
